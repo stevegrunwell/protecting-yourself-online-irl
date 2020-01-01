@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Protecting Yourself Online & IRL</title>
+        <style type="text/css">
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                padding: 1rem 2%;
+                font-family: sans-serif;
+                line-height: 1.6;
+                color: #222;
+            }
+
+            main {
+                max-width: 900px;
+                margin: 0 auto;
+            }
+
+            .demo {
+                padding-top: .5em;
+            }
+
+            button, output {
+                margin-bottom: 1em;
+                padding: .2em 1em;
+                font-size: 1rem;
+                line-height: inherit;
+                background: #f2f2f2;
+                border: 1px solid #dadada;
+                border-radius: 5px;
+            }
+
+            button {
+                flex: 0 0 25%;
+                display: inline-block;
+                transition: 0.2s all;
+                cursor: pointer;
+            }
+
+            button:hover, button:focus {
+                background: #dadada;
+            }
+
+            button:click {
+                background: #ddd;
+            }
+
+            .output {
+                flex: 0 0 70%;
+            }
+
+            output {
+                display: block;
+                font-family: monospace;
+                white-space: pre-wrap;
+            }
+
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            img[src=""] {
+                display: none;
+            }
+
+            output.pending {
+                color: #777;
+            }
+
+            output.pending:before {
+                content: 'Output will appear here';
+                font-style: italic;
+            }
+
+            output.error {
+                color: darkred;
+                border-color: inherit;
+            }
+
+            @media (min-width: 768px) {
+                .demo {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    align-items: flex-start;
+                    justify-content: space-between;
+                }
+
+
+            }
+        </style>
+    </head>
+
+    <body>
+        <main>
+            <section id="geolocation">
+                <h2>Geolocation API</h2>
+                <p>Locate the user using <a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation">the browser's Geolocation API</a>.</p>
+
+                <div class="demo">
+                    <button onclick="getCurrentLocation()">Get my Location</button>
+                    <div class="output">
+                        <output for="geolocation" class="pending"></output>
+                        <img src="" alt="Approximate location determined by Geolocation API" />
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <script>
+            const MAPBOX_TOKEN = 'pk.eyJ1Ijoic3RldmVncnVud2VsbCIsImEiOiJjazJ2MTg0dnYwMGJiM2NzY2RmcGEyY3JlIn0.mxpLTJ8LJx50WHSF6WZCGg';
+
+            /**
+             * Reset an <output> element.
+             */
+            function resetOutput(output) {
+                output.innerText = '';
+                output.classList.remove('error');
+                output.classList.add('pending');
+            }
+
+            /**
+             * Retrieve my current location via the Geolocation API.
+             *
+             * @link https://developer.mozilla.org/en-US/docs/Web/API/Geolocation
+             */
+            function getCurrentLocation() {
+                const output = document.querySelector('output[for="geolocation"]');
+                const map = document.querySelector('#geolocation img');
+
+                resetOutput(output);
+
+                navigator.geolocation.getCurrentPosition(position => {
+                    output.innerText = JSON.stringify(position.coords, ['longitude', 'latitude', 'altitude'], 4);
+                    output.classList.remove('pending');
+                    map.src = getMapUrl(position.coords.longitude, position.coords.latitude);
+                }, err => {
+                    output.classList.add('error');
+                    output.innerText = err.message;
+                    output.classList.remove('pending');
+                });
+            }
+
+            /**
+             * Render a map for the given longitude and latitude.
+             */
+            function getMapUrl(lng, lat, zoom = 16) {
+                return `https://api.mapbox.com/v4/mapbox.emerald/pin-l+285A98(${lng},${lat})/${lng},${lat},${zoom}/500x250@2x.png?access_token=${MAPBOX_TOKEN}&logo=false`;
+            }
+        </script>
+    </body>
+</html>

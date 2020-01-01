@@ -1,0 +1,209 @@
+/**
+ * White theme for reveal.js. This is the opposite of the 'black' theme.
+ *
+ * By Hakim El Hattab, http://hakim.se
+ */
+
+// Default mixins and settings -----------------
+@import "../../bower_components/reveal.js/css/theme/template/mixins";
+@import "../../bower_components/reveal.js/css/theme/template/settings";
+// ---------------------------------------------
+
+// Include theme-specific fonts
+@import url('https://fonts.googleapis.com/css?family=Paytone+One|Open+Sans');
+
+// Override theme settings (see ../../bower_components/reveal.js/css/theme/template/settings.scss)
+$backgroundColor: #fff;
+
+$mainColor: #434850;
+$headingColor: #333;
+
+$mainFontSize: 38px;
+$mainFont: 'Open Sans', sans-serif;
+$headingFont: 'Paytone One', 'Open Sans', sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: uppercase;
+$headingFontWeight: 400;
+$linkColor: #5992bf;
+$linkColorHover: #396b93;
+$selectionBackgroundColor: lighten( $linkColor, 25% );
+
+$heading1Size: 2em;
+$heading2Size: 1.6em;
+$heading3Size: 1.3em;
+$heading4Size: 1.0em;
+
+section.has-dark-background {
+    &, h1, h2, h3, h4, h5, h6 {
+        color: #fff;
+    }
+}
+
+// Theme template ------------------------------
+@import "../../bower_components/reveal.js/css/theme/template/theme";
+// ---------------------------------------------
+
+.reveal {
+    .slide-background {
+        video {
+            height: auto;
+        }
+    }
+
+    footer {
+      position: fixed;
+      top: auto;
+      bottom: 1em;
+      left: 1em;
+      padding: .5em;
+      z-index: 100;
+      font-size: 0.5em;
+      background: rgba(255, 255, 255, 0.7);
+
+      a {
+        color: darken($linkColor, 15%);
+      }
+    }
+}
+
+.slides {
+
+    h1, h2, h3, h4, h5, h6 {
+        line-height: 1.35;
+        text-transform: none;
+
+        img {
+            max-width: 50%;
+            max-height: 1.5em;
+        }
+
+        code {
+            text-transform: none;
+        }
+    }
+
+    h1 {
+        line-height: 1.2;
+        margin-bottom: 2em;
+    }
+
+    img {
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    cite {
+        display: block;
+        margin-top: 1em;
+        font-size: .8em;
+    }
+
+    abbr {
+        text-decoration: none;
+        cursor: help;
+    }
+
+    .slides-link {
+        display: block;
+        margin-top: 1em;
+        font-size: .86em;
+        white-space: nowrap;
+    }
+
+    dl {
+        width: 100%;
+        margin: 0;
+
+        dt {
+            clear: both;
+            float: left;
+            width: 35%;
+            font-family: $headingFont;
+            text-align: right;
+        }
+
+        dd {
+            clear: right;
+            float: right;
+            width: calc(65% - 40px);
+
+            + dt, + dd {
+                margin-top: .5em;
+            }
+
+            pre {
+                width: 100%;
+            }
+        }
+
+        dd + dt,
+        dd + dt + dd {
+            margin-top: .5em;
+        }
+    }
+
+    blockquote {
+        background: rgba(255, 255, 255, 0.8);
+    }
+
+    .fragment-replacement {
+        .fragment.fade-out.visible,
+        .fragment.fade-in:not(.visible) {
+            display: none;
+        }
+    }
+
+    .email {
+        font-style: normal;
+        text-align: left;
+        padding: .1em .5em;
+
+        .subject {
+            display: block;
+            font-weight: bold;
+            font-size: smaller;
+            padding-bottom: .25em;
+            border-bottom: 1px solid;
+        }
+    }
+
+    .solid-background {
+        background-color: $backgroundColor;
+    }
+
+    .footnote {
+        margin-top: 8em;
+        font-size: .5em;
+    }
+
+    .hockey-goals {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        max-width: 70%;
+        margin: 0 auto 1em;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        list-style: none;
+
+        li {
+            text-align: center;
+            &:before {
+                content: '🥅';
+                display: block;
+                font-size: 8em;
+                transition: all .4s;
+            }
+
+            &.fragment.shrink.visible {
+                transform: scale(1);
+
+                &:before {
+                    transform: scale(0.25);
+                }
+            }
+        }
+    }
+}
