@@ -45,8 +45,7 @@
         "domain-lookalikes.md",
         "social-engineering.md",
         "social-engineering2.md",
-        "social-engineering3.md",
-        "juice-jacking.md"
+        "social-engineering3.md"
     ],
     [
         "protecting-privacy.md",
@@ -75,6 +74,7 @@
         "physical-security.md",
         "situational-awareness.md",
         "screen-positioning.md",
+        "juice-jacking.md",
         "physical-threats.md",
         "safety-above-all-else.md"
     ],
