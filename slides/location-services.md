@@ -7,7 +7,7 @@
 
 Note:
 
-On the topic of privacy, it's important to realize that our devices typically know where we are.
+Our devices often know where we are, and if we're not careful they might report that information.
 
 - Websites: Geolocation API (notice how a VPN doesn't change that)
 - Apps: GPS
