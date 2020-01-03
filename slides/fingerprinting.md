@@ -9,7 +9,7 @@ Create a unique "fingerprint" for your computer
 * <!-- .element: class="fragment" --> Timezone
 * <!-- .element: class="fragment" --> Available fonts
 
-[amiunique.org](https://amiunique.org/)<!-- .element: class="fragment" target="_blank" rel="noopener" -->
+[amiunique.org](https://amiunique.org/fp)<!-- .element: class="fragment" target="_blank" rel="noopener" -->
 
 Note:
 
