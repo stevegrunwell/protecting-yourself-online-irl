@@ -12,5 +12,3 @@ Note:
 Let's see if we can get everyone's hands up.
 
 Social media sites: Facebook, Instagram, Snapchat, Twitter, TikTok, et al
-
-Families here are going to be more tech-oriented.

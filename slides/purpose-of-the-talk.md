@@ -6,6 +6,8 @@
 
 Note:
 
-1. The purpose of this talk is to show you how to keep yourself safe, whether online or in-person. Safety first, right?
-2. In order to do so, we're going to look at some of the most common ways that the people might try to steal our information and what we can do to stop them.
-3. Then, we'll look at other ways to protect our privacy, stop people from tracking us, and keep ourselves safe in public.
+Three goals for this talk:
+
+1. Safety first, right? How do we keep ourselves safe, both online and in-person?
+2. We're going to get in the heads of the bad guys, see how they think, and learn what tricks they have up their sleeves so we don't fall for them.
+3. Then, we'll look at other ways to protect our privacy, stop people from tracking us, and keep ourselves protected while in public.
