@@ -20,6 +20,7 @@ In this talk, we'll cover the fundamentals of what you should know to protect yo
 Please note that some of these are affiliate links, for which I may receive a small referral fee.
 
 * [1Password](https://stevegrunwell.com/r/1password)
+* [DuckDuckGo](https://duckduckgo.com)
 * [Have I Been Pwned?](https://haveibeenpwned.com/)
 * [iVPN](https://www.ivpn.net/)
 * [LastPass](https://lastpass.com)
