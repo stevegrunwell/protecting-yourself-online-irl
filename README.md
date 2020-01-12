@@ -30,4 +30,4 @@ Please note that some of these are affiliate links, for which I may receive a sm
 
 ## Presentation history
 
-[CodeMash 2020](https://www.codemash.org/)
+* [CodeMash 2020](https://www.codemash.org/) — January 9, 2019 ([PDF](https://github.com/stevegrunwell/protecting-yourself-online-irl/releases/download/codemash-2020/slides.pdf))
